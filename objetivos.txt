@@ -1,0 +1,9 @@
+Clase #2 24/04/2024
+
+1) Enrutamiento: 
+                a)el camino para llegar a un end point (web services) 
+                b)el camino para llegar a un sitio de una página web o 
+                sistema de informacion web 
+2) Controladores 
+3) libreria pg
+4) web service ya conectado a la base de datos
