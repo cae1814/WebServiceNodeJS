@@ -1,6 +1,7 @@
 import { db } from "../db/conexion.js";
 
 const getEmployees = async (req, res) => {
+    console.log("getEmployees");
     const sql = "SELECT id, nombres, apellidos, dni, TO_CHAR(fecha_nacimiento, 'DD/MM/YYYY') fecha_nacimiento, genero, CASE estado WHEN 0 THEN 'Activo' WHEN 1 THEN 'Suspendido' ELSE 'Desactivo' END estado FROM ex1_employees ORDER BY ID ASC";
     const result = await db.query(sql);
     return res.json(result);

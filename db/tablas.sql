@@ -59,3 +59,18 @@ CREATE TABLE ex1_titles (
 	FECHA_CREACION	TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_depto_manager01 FOREIGN KEY (ID_EMPLOYEE) REFERENCES EX1_EMPLOYEES(ID)
 );
+
+CREATE TABLE IF NOT EXISTS ex_usuarios
+(
+    id integer	PRIMARY KEY GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    usuario character varying(30) COLLATE pg_catalog."default",
+    contrasena character varying(200) COLLATE pg_catalog."default",
+    nombre character varying(30) COLLATE pg_catalog."default",
+    apellido character varying(180) COLLATE pg_catalog."default",
+    estado integer DEFAULT 1,
+    creado_por character varying(40) COLLATE pg_catalog."default" DEFAULT 'admin'::character varying,
+    fecha_creacion timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT ex_usuario_key UNIQUE (usuario)
+);
+
+INSERT INTO ex_usuarios (usuario, contrasena, nombre, apellido, creado_por) VALUES ('cae1814', 'Hon.2020', 'Cristian A.', 'Espinozab', 'admin');

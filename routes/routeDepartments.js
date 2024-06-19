@@ -8,7 +8,7 @@ import {
 } from '../controllers/controllerDepartments.js';
 
 // SELECT Departments
-departments.get('/', getDepartments);
+departments.get('/', getDepartments); 
 
 // INSERT Departments
 departments.post('/', postDepartments)

@@ -1,7 +1,7 @@
 import { db } from "../db/conexion.js";
 
 const getDepartments = async (req, res) => {
-    
+    console.log("getDepartments");
     const {id} = req.params;
     var sql = "SELECT id, nombre, descripcion, creado_por, TO_CHAR(fecha_creacion, 'DD/MM/YYYY HH24:MI:SS') fecha_creacion FROM ex1_departments ORDER BY ID ASC";
     const result = await db.query(sql);
@@ -9,6 +9,7 @@ const getDepartments = async (req, res) => {
 }
 
 const postDepartments = async (req, res) => {
+    console.log("postDepartments");
     const { nombre, descripcion } = req.body;
     const data = [nombre, descripcion];
 

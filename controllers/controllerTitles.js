@@ -1,6 +1,7 @@
 import { db } from "../db/conexion.js";
 
 const getTitles = async (req, res) => {
+    console.log("getTitles");
     const sql = "SELECT a.id, a.nombre, b.nombres, b.apellidos, TO_CHAR(a.desde, 'DD/MM/YYYY') desde, TO_CHAR(a.hasta, 'DD/MM/YYYY') hasta, a.creado_por, TO_CHAR(a.fecha_creacion, 'DD/MM/YYYY HH24:MI:SS') fecha_creacion FROM ex1_titles a, ex1_employees b WHERE a.id_employee = b.id ORDER BY id ASC ";
     const result = await db.query(sql);
     return res.json(result);
